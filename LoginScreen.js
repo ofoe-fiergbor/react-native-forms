@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class LoginScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             email: '',
+             password:''
+        }
+    }
+    
     render() {
         return (
             <View style={styles.containter}>
@@ -9,8 +18,20 @@ export default class LoginScreen extends Component {
                     <Text style={styles.loginText}>Log in</Text>
                 </View>
                 <View>
-                    <TextInput placeholder='Email' style={styles.textInput} placeholderTextColor='#9b989e'/>
-                    <TextInput placeholder='Password' style={styles.textInput} placeholderTextColor='#9b989e'/>
+                    <TextInput placeholder='Email' style={styles.textInput} 
+                    placeholderTextColor='#9b989e'
+                    value={this.state.email}
+                    onChangeText={email=>{
+                        this.setState({email})
+                    }}/>
+
+                    <TextInput placeholder='Password' style={styles.textInput} 
+                    placeholderTextColor='#9b989e' secureTextEntry={true}
+                    value={this.state.password}
+                    onChangeText={password=>{
+                        this.setState({password})
+                    }}/>
+                    
                     <Text style={styles.forgotPassword}>Forgot password?</Text>
                 </View>
 
