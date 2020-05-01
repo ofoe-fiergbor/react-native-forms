@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, FlatList, Text, Image } from 'react-native'
 import ListItem from './Components/ListItem'
+import ListItem2 from './Components/ListItem2'
 
 export default function ListScreen() {
     const contacts = [
@@ -15,13 +16,14 @@ export default function ListScreen() {
     ]
     return (
         <View>
-            <FlatList
+            {/* <FlatList
             data ={contacts}
             renderItem = {({item})=>{
                 return <ListItem name={item.name} phone={item.phone} image={item.image} />
             }
             }
-            keyExtractor={(item)=> item.id}/>
+            keyExtractor={(item)=> item.id}/> */}
+            <ListItem2/>
             
         </View>
     )
